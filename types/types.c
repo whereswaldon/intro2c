@@ -29,6 +29,10 @@ signed long sl;
 unsigned long long usll; 
 signed long long sll; 
 
+// C has an important builtin operator called sizeof that returns the number of bytes of
+// memory that a given type occupies. This will be **very** important later.
+int s = sizeof(int); // usually will yield 4, but does depend on processor architecture
+
 // But wait, what about booleans?
 // C didn't have them (as their own type) for a looooooong time.
 // A more "recent" revision of the language, C99, added:
@@ -100,24 +104,51 @@ void demo_pointer_assignment() {
     			// sets the value in vptr2 (the address of an int) to the value of vptr
     			// (the address of victim). 
 
+    // How do we read the value that a pointer is referencing?
+    int value = *vptr;
+    // Using a * with a pointer (when you're not creating the pointer) is called "dereferencing"
+    // the pointer. It allows you to read or modify the value at the address stored in the pointer, instead
+    // of reading/modifying the address.
+    // In this case, dereferencing the pointer gave us a copy of the value stored at that address.
+    value = *vptr + 19; // we can do math with the result of dereferencing a pointer;
+    // Dereferencing pointers has a very high operator precedence, so it happens before the addition
+
     // So how do we use a pointer to victim to modify victim?
     *vptr += 5; // increment victim by 5
-    // Using a * with a pointer (when you're not creating the pointer) is called "dereferencing"
-    // the pointer. It allows you to modify the value at the address stored in the pointer, instead
-    // of modifying the address (which is why this doesn't move the address 5 bytes further into
-    // memory).
+    // When you assign *into* a dereferenced pointer, it modifies the value at the address in the
+    // pointer.
 }
+
+// Time for challenge 3! See chal3.c
+
+#include <stdio.h>
 
 // Arrays and Pointers
 // An array in C is just a pointer to the first element of the array. You can treat arrays as pointers
 // and pointers as arrays. As I'm sure you can imagine, this creates some interesting possibilities.
 void pointer_and_array_demo() {
-    double dubs[100];
+    unsigned char num_elems = 100; // usually, you want the size of your arrays to be a variable
+    					// or a compile-time constant with #define
+    double dubs[num_elems];
     double *dptr = dubs; // why don't we need "&"? Arrays are already pointers.
 
     double first = dubs[0]; // get the first element;
     first = *dubs; // get the first element by dereferencing the array (it's just a pointer)
     first = *dptr; // basically the same as the previous line
+    first = dptr[0]; // arrays are just pointers, so pointers can be used like arrays
+
+    // Pointers have interesting properties to facilitate their use as arrays.
+    dptr++; // This moves dptr to point at the next **element** in the array.
+    // It does this by incrementing the pointer by sizeof(thing_pointed_at) bytes. In this case,
+    // since it's a pointer to a double, it increments by sizeof(double) bytes.
+    dptr--; // this does the inverse;
+
+    // this gives us another way to iterate over arrays
+    int times = 0;
+    for (double *cursor = dubs; times < num_elems; cursor++) {
+        printf("%f\n", *dubs);
+        times++;
+    }
 }
 
 // Need a main function to compile
