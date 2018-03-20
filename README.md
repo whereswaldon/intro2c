@@ -79,3 +79,39 @@ Go into the `funcs` directory and look at `funcs.c` in a code editor. Read throu
 ### Strings and Memory
 
 Go into the `str_mem` directory and look at `str_mem.c` in a code editor. Read through it and try the challenge.
+
+### Getting help with the C standard library
+
+Most languages have a source of documentation that we consult on the internet, but doing that for C
+can be quite frustrating. The documentation is out there, but it can be hard to find. This is because
+most C programmers don't need to go to the internet to find it. Linux systems actually already have
+all of the documentation for the C standard library. You just need to know how to find it.
+
+If you want to get help with a subject like strings, try the following:
+```
+$ apropos string | less
+```
+The `apropos` command searches the installed documentation for information relevant to the keywords
+that you provided.
+
+```
+<output truncated>
+stpcpy (3)           - copy a string returning a pointer to its end
+stpncpy (3)          - copy a fixed-size string, returning a pointer to its end
+strcasecmp (3)       - compare two strings ignoring case
+strcasestr (3)       - locate a substring
+strcat (3)           - concatenate two strings
+strchr (3)           - locate character in string
+strchrnul (3)        - locate character in string
+strcmp (3)           - compare two strings
+strcoll (3)          - compare two strings using the current locale
+strcpy (3)           - copy a string
+<output truncated>
+```
+
+Each line of output is a documentation page related to your keyword. To view that documentation,
+you can type:
+```
+man <paren-num> <first-word>
+```
+So to view `strcmp (3) ...`, I would type `man 3 strcmp`.
