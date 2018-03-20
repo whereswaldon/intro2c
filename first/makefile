@@ -15,15 +15,7 @@ first.s: first.c
 first.E: first.c
 	$(CC) $(CFLAGS) -o first.E -E first.c
 
-cond-all: cond.E cond
-
-cond.E: cond.c
-	$(CC) $(CFLAGS) -o cond.E -E cond.c
-
-cond: cond.c
-	$(CC) $(CFLAGS) -o cond cond.c
-	
 clean:
-	rm *.o *.s *.E first cond
+	rm *.o *.s *.E first
 
 
