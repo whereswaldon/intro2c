@@ -142,6 +142,7 @@ void pointer_and_array_demo() {
     // It does this by incrementing the pointer by sizeof(thing_pointed_at) bytes. In this case,
     // since it's a pointer to a double, it increments by sizeof(double) bytes.
     dptr--; // this does the inverse;
+    // This is called "pointer arithmetic". I think you can see why
 
     // this gives us another way to iterate over arrays
     int times = 0;
@@ -150,6 +151,8 @@ void pointer_and_array_demo() {
         times++;
     }
 }
+
+// Challenge 4! See chal4.c
 
 // Need a main function to compile
 int main() {
