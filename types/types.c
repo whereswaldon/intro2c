@@ -75,6 +75,8 @@ void demo_arrays() {
     // be really careful about it.
 }
 
+// OKAY, time for challenge 2! See chal2.c
+
 // Pointers
 // A pointer is like a reference variable in Java (well, references were modeled off of pointers,
 // but whatever). A pointer is literally the address in memory of some value. An int pointer tells

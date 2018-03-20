@@ -12,4 +12,5 @@ int main() {
     // perform some arithmetic operations between them (be sure to cast)
 
     // use printf to display the results
+    // hint: printf("%d\n", some_int);
 }
