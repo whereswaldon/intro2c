@@ -41,3 +41,7 @@ Go into the `types` directory and look at `types.c` in a code editor (syntax hig
 ### Functions
 
 Go into the `funcs` directory and look at `funcs.c` in a code editor. Read through it and try the challenge.
+
+### Strings and Memory
+
+Go into the `str_mem` directory and look at `str_mem.c` in a code editor. Read through it and try the challenge.
