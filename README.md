@@ -80,6 +80,10 @@ Go into the `funcs` directory and look at `funcs.c` in a code editor. Read throu
 
 Go into the `str_mem` directory and look at `str_mem.c` in a code editor. Read through it and try the challenge.
 
+### Structs
+
+Go into the `struct` directory and look at `struct.c` in a code editor. Read through it and try the challenge.
+
 ### Getting help with the C standard library
 
 Most languages have a source of documentation that we consult on the internet, but doing that for C
