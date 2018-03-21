@@ -147,7 +147,7 @@ void pointer_and_array_demo() {
     // this gives us another way to iterate over arrays
     int times = 0;
     for (double *cursor = dubs; times < num_elems; cursor++) {
-        printf("%f\n", *dubs);
+        printf("%f\n", *cursor);
         times++;
     }
 }
