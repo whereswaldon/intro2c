@@ -12,7 +12,6 @@ This repository is intended to teach the following skills:
 * Basic C types
 * Basic functions
 * C strings and memory management
-* Basic structures
 * How to get help with and use the C standard library
 
 ## Prerequisites
@@ -79,10 +78,6 @@ Go into the `funcs` directory and look at `funcs.c` in a code editor. Read throu
 ### Strings and Memory
 
 Go into the `str_mem` directory and look at `str_mem.c` in a code editor. Read through it and try the challenge.
-
-### Structs
-
-Go into the `struct` directory and look at `struct.c` in a code editor. Read through it and try the challenge.
 
 ### Getting help with the C standard library
 

@@ -69,3 +69,7 @@ birthday_t * new_birthday() {
 // Write a function that modifies the data in a struct that is passed in as a pointer.
 // Write a function that pretty-prints your struct.
 // Write a main function to test it all out.
+// Ideas for your struct:
+    // data about a car
+    // data about a book
+    // data about a character in an RPG
