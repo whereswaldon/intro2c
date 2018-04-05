@@ -8,13 +8,9 @@ Let's start with a review of pointers and arrays in C. Open `ptr_arr` and look a
 
 Go into the `str_mem` directory and look at `str_mem.c` in a code editor. Read through it and try the challenge.
 
-### Structs
+### Structs and Methods
 
 Go into the `struct` directory and look at `struct.c` in a code editor. Read through it and try the challenge.
-
-### Methods
-
-C has idioms that resemble methods (functions that act on structures). Open the `methods` folder and read through `methods.c`. Try the challenge.
 
 ### Headers and Modularization
 
