@@ -45,7 +45,39 @@ int is_odd(int input);
 // functions that we define (as well as the type definitions for any types that those
 //                           functions use).
 
+// NOTE: Given that we have only used standard library header files before,
+// you'll notice something strange. Standard library headers are included
+// with <> symbols:
+#include <stdio.h>
+// But custom headers are included with double quotes:
+#include "room.h"
+// The double quotes indicate to the compiler that the header is in the
+// current working directory.
+
 // Let's see this in action. In this directory, there exists a `game.c` and a `room.h`
 // file. `game.c` implements a text-based game using a room struct defined in `room.h`.
 // `room.h` provides prototypes for a number of functions that operate on the room
 // struct. Your job is to implement a `room.c` file that implements those functions.
+
+// In order to do that, you'll need to compile your C files separately and then combine
+// them into an executable.
+// C has these files called object files that are contain already-compiled
+// code. We can combine object files in a process called "linking" to produce
+// a program. When you only have one source code file, this process is
+// unnecessary, but now we have to do it. To convert a single C file into
+// an object file, you can do:
+
+// $ c99 -c file.c
+// This will create a file.o in the current working directory that is ready
+// to be linked. Once you have several object files that you'd like to combine,
+// you can run:
+// $ c99 file1.o file2.o file3.o
+// This will link them into a program called `a.out` that is ready to be run.
+// To control the name of the output program, we can use the `-o` flag:
+// $ c99 -o game game.o room.o
+// The above will produce an executable called "game".
+
+// The workshop materials include an example implementation of the room.h
+// functions in object file form. You can use that to see how the game
+// works with:
+// $ c99 game.o example-room.o && ./a.out
