@@ -58,6 +58,7 @@ int main() {
     third->west = first;
 
     room_t *current_room = first;
+    print_room(current_room);
     // `man 3 fgets` and `man 3 stdin` for info
     while (fgets(input, BUF_SIZE, stdin) != NULL) {
         current_room = handleCommand(input, current_room);
