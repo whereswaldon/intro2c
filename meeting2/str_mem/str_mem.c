@@ -25,6 +25,8 @@ void str_demo() {
 
     // to properly concatenate C strings, we can do this:
     char big[128];
+    big[0] = '\0'; // ensure that our array begins with a null byte and
+    			// is therefore equivalent to the empty string
     strcpy(big, s); // copy s into big
     strcat(big, s2); // concatenate s2 to the end of our new copy of s
     // big now contains s concatenated with s2.
